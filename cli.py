@@ -46,7 +46,7 @@ def main():
                 sex=args.sex
             )
             print(student)
-        except (ValidationError, InvalidEmailError) as e:
+        except (ValidationError, InvalidNameError) as e:
             # Print error message if there is a ValidationError or InvalidEmailError
             print(e)
 
