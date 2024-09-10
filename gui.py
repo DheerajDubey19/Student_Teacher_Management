@@ -82,13 +82,13 @@ def main():
         dpg.add_combo(label="Gender", items=["male", "female", "other"], tag="##student_gender")
         dpg.add_button(label="Submit Student", callback=submit_student)
         
-        dpg.add_text("", tag="##student_error", color=(255, 0, 0))  # Error message display for student submission
+        dpg.add_text("", tag="##student_error", color=(255, 0, 0))  
 
         dpg.add_separator()
         dpg.add_text("Students List")
         dpg.add_child_window(tag="##student_list", width=480, height=150) 
 
-        dpg.add_spacing(count=10)  # Add some space between sections
+        dpg.add_spacing(count=10)  
 
         # Section for adding teachers
         dpg.add_text("Add Teacher")
@@ -96,7 +96,7 @@ def main():
         dpg.add_input_text(label="Subjects", tag="##teacher_subject")
         dpg.add_button(label="Submit Teacher", callback=submit_teacher)
 
-        dpg.add_text("", tag="##teacher_error", color=(255, 0, 0))  # Error message display for teacher submission
+        dpg.add_text("", tag="##teacher_error", color=(255, 0, 0))  
 
         dpg.add_separator() 
         dpg.add_text("Teachers List")
