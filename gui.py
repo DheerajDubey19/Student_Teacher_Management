@@ -20,8 +20,8 @@ def submit_student(sender, data):
         # Create a Student object and add it to the list
         student = Student(id=randint(1, 1000), name=name, email=email, age=int(age), address=address, sex=sex)
         students.append(student)
-        update_student_list()  # Update the displayed list of students
-        dpg.set_value("##student_error", "")  # Clear any previous error message
+        update_student_list()  
+        dpg.set_value("##student_error", "")  
         print(f"Student added: {student}")
     except (InvalidAgeError, InvalidNameError) as e:
         # Handle custom validation errors for student
@@ -41,8 +41,8 @@ def submit_teacher(sender, data):
         # Create a Teacher object and add it to the list
         teacher = Teacher(id=len(teachers) + 1, name=name, subjects=subjects)
         teachers.append(teacher)
-        update_teacher_list()  # Update the displayed list of teachers
-        dpg.set_value("##teacher_error", "")  # Clear any previous error message
+        update_teacher_list() 
+        dpg.set_value("##teacher_error", "")  
         print(f"Teacher added: {teacher}")
     except Exception as e:
         # Handle any general exceptions
@@ -84,9 +84,9 @@ def main():
         
         dpg.add_text("", tag="##student_error", color=(255, 0, 0))  # Error message display for student submission
 
-        dpg.add_separator()  # Separator between sections
+        dpg.add_separator()
         dpg.add_text("Students List")
-        dpg.add_child_window(tag="##student_list", width=480, height=150)  # Container for the list of students
+        dpg.add_child_window(tag="##student_list", width=480, height=150) 
 
         dpg.add_spacing(count=10)  # Add some space between sections
 
@@ -98,9 +98,9 @@ def main():
 
         dpg.add_text("", tag="##teacher_error", color=(255, 0, 0))  # Error message display for teacher submission
 
-        dpg.add_separator()  # Separator between sections
+        dpg.add_separator() 
         dpg.add_text("Teachers List")
-        dpg.add_child_window(tag="##teacher_list", width=480, height=150)  # Container for the list of teachers
+        dpg.add_child_window(tag="##teacher_list", width=480, height=150)  
 
     # Set up and show the DearPyGui viewport
     dpg.create_viewport(title='Student and Teacher Management')
